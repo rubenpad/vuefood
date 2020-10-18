@@ -1,39 +1,36 @@
 <template>
-  <v-navigation-drawer v-model="drawer" app>
-    <v-sheet color="grey lighten-4 text-uppercase" class="pa-4">
-      <span class="font-weight-light">good</span>
-      <span>food</span>
-    </v-sheet>
+    <div>
+        <v-toolbar>
+            <v-toolbar-title class="font-weight-bold text-uppercase">
+                <span class="secondary--text">good</span>
+                <span class="success--text">food</span>
+            </v-toolbar-title>
 
-    <v-divider></v-divider>
+            <v-spacer></v-spacer>
 
-    <v-list>
-      <v-list-item
-        v-for="link in links"
-        :key="link.icon"
-        router
-        :to="link.route"
-      >
-        <v-list-item-icon>
-          <v-icon>{{ link.icon }}</v-icon>
-        </v-list-item-icon>
-
-        <v-list-item-content>
-          <v-list-item-title>{{ link.text }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </v-navigation-drawer>
+            <v-toolbar-items>
+                <v-btn
+                    min-
+                    v-for="link in links"
+                    :key="link.text"
+                    :to="link.route"
+                    text
+                >
+                    {{ link.text }}
+                </v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
+    </div>
 </template>
 
 <script>
 export default {
-  data: () => ({
-    drawer: null,
-    links: [
-      { icon: "mdi-home", text: "Home", route: "/" },
-      { icon: "mdi-account-group", text: "Buyers", route: "/buyers" }
-    ]
-  })
+    data: () => ({
+        drawer: null,
+        links: [
+            { icon: 'mdi-home', text: 'Home', route: '/' },
+            { icon: 'mdi-account-group', text: 'Buyers', route: '/buyers' },
+        ],
+    }),
 };
 </script>
