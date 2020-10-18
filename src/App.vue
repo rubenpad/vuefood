@@ -1,25 +1,25 @@
 <template>
-    <v-app>
-        <Navbar />
+  <v-app>
+    <Navbar />
 
-        <v-main>
-            <v-container fluid>
-                <router-view></router-view>
-            </v-container>
-        </v-main>
-    </v-app>
+    <v-main>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
+import Navbar from "@/components/Navbar.vue";
 
 export default {
-    name: 'App',
+  name: "App",
 
-    components: {
-        Navbar,
-    },
+  components: {
+    Navbar
+  },
 
-    data: () => ({}),
+  data: () => ({})
 };
 </script>
