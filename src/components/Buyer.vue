@@ -1,5 +1,8 @@
 <template>
-  <router-link :to="{ name: 'History', params: { buyerId: buyer.id } }">
+  <router-link
+    class="text-decoration-none"
+    :to="{ name: 'History', params: { buyerId: buyer.id } }"
+  >
     <v-hover v-slot:default="{ hover }">
       <v-card
         :elevation="hover ? 12 : 2"
