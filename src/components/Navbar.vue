@@ -9,13 +9,7 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items>
-        <v-btn
-          min-
-          v-for="link in links"
-          :key="link.text"
-          :to="link.route"
-          text
-        >
+        <v-btn v-for="link in links" :key="link.text" :to="link.route" text>
           {{ link.text }}
         </v-btn>
       </v-toolbar-items>

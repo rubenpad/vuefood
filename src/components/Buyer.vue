@@ -1,6 +1,6 @@
 <template>
-  <v-hover v-slot:default="{ hover }">
-    <a>
+  <router-link :to="{ name: 'History', params: { buyerId: buyer.id } }">
+    <v-hover v-slot:default="{ hover }">
       <v-card
         :elevation="hover ? 12 : 2"
         :class="{ 'on-hover': hover }"
@@ -12,8 +12,8 @@
 
         <v-card-subtitle>{{ buyer.age }}</v-card-subtitle>
       </v-card>
-    </a>
-  </v-hover>
+    </v-hover>
+  </router-link>
 </template>
 
 <script>
