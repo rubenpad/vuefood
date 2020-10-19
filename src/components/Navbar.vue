@@ -2,7 +2,7 @@
   <div>
     <v-toolbar>
       <v-toolbar-title class="font-weight-bold text-uppercase">
-        <span class="secondary--text">good</span>
+        <span class="primary--text">good</span>
         <span class="success--text">food</span>
       </v-toolbar-title>
 
