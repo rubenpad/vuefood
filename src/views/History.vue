@@ -109,7 +109,7 @@ export default {
   display: grid;
   grid-gap: 12px;
   grid-template-columns: 60% 40%;
-  grid-template-rows: 3% auto;
+  grid-template-rows: 4% 96%;
 }
 
 .grid-up {

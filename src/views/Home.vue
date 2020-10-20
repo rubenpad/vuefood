@@ -19,12 +19,26 @@
 
 <script>
 import LoadDataSheet from "@/components/LoadData.vue";
+import api from "@/api";
 
 export default {
   name: "Home",
   components: { LoadDataSheet },
   data() {
-    return {};
+    return {
+      date: new Date().toISOString().substr(0, 10)
+    };
+  },
+  mounted() {
+    this.loadData(this.date);
+  },
+  methods: {
+    async loadData(date) {
+      const d = new Date(date);
+      const unixTimestamp = Math.floor(d.getTime() / 1000);
+
+      await api.loadData(unixTimestamp);
+    }
   }
 };
 </script>
