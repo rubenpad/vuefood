@@ -2,7 +2,9 @@
   <v-dialog v-model="dialog" persistent max-width="580px" max-height="4000px">
     <template v-slot:activator="{ on, attrs }">
       <v-list-item-content v-bind="attrs" v-on="on">
-        <v-list-item-title v-text="transaction.id"></v-list-item-title>
+        <v-list-item-title
+          v-text="'Transaction ' + transaction.id"
+        ></v-list-item-title>
       </v-list-item-content>
     </template>
     <v-card>
@@ -29,7 +31,7 @@
             <tr>
               <td>{{ transaction.id }}</td>
               <td>{{ formatDate(date) }}</td>
-              <td>{{ transaction.device }}</td>
+              <td>{{ transaction.device.toUpperCase() }}</td>
               <td>{{ transaction.from.ip }}</td>
             </tr>
           </tbody>
