@@ -49,7 +49,7 @@
             :disabled="loading"
             color="blue-grey"
             class="ma-2 white--text"
-            @click="loader = 'loading'"
+            @click="loadData(date)"
           >
             Upload
             <v-icon right dark>
@@ -63,26 +63,29 @@
 </template>
 
 <script>
+import api from "@/api";
+
 export default {
   name: "LoadDataSheet",
   components: {},
   data() {
     return {
-      loader: null,
       loading: false,
       sheet: false,
-      date: new Date().toISOString().substr(0, 10),
-      menu: false
+      menu: false,
+      date: new Date().toISOString().substr(0, 10)
     };
   },
-  watch: {
-    loader() {
-      const l = this.loader;
-      this[l] = !this[l];
+  methods: {
+    async loadData(date) {
+      const d = new Date(date);
+      const unixTimestamp = Math.floor(d.getTime() / 1000);
 
-      setTimeout(() => (this[l] = false), 3000);
+      this.loading = true;
+      const response = await api.loadData(unixTimestamp);
 
-      this.loader = null;
+      this.loading = false;
+      console.log(response.message);
     }
   }
 };
