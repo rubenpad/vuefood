@@ -1,13 +1,18 @@
-import axios from "axios";
+import axios from 'axios';
 
-const url = "http://localhost:3000";
+const url = 'http://localhost:3000';
 
 async function loadData(date) {
-  const response = await axios(`${url}/data?date=${String(date)}`, {
-    method: "POST"
-  });
+    const response = await axios(`${url}/data?date=${String(date)}`, {
+        method: 'POST',
+    });
 
-  return response.data;
+    return response.data;
 }
 
-export default { loadData };
+async function getBuyers() {
+    const response = await axios(`${url}/buyers`);
+    return response.data;
+}
+
+export default { loadData, getBuyers };
