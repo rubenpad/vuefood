@@ -59,6 +59,16 @@
         </v-card>
       </v-sheet>
     </v-bottom-sheet>
+
+    <v-snackbar v-model="snackbar">
+      {{ message }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
@@ -67,12 +77,13 @@ import api from "@/api";
 
 export default {
   name: "LoadDataSheet",
-  components: {},
   data() {
     return {
       loading: false,
       sheet: false,
       menu: false,
+      message: "",
+      snackbar: false,
       date: new Date().toISOString().substr(0, 10)
     };
   },
@@ -85,7 +96,8 @@ export default {
       const response = await api.loadData(unixTimestamp);
 
       this.loading = false;
-      console.log(response.message);
+      this.message = response.message;
+      this.snackbar = true;
     }
   }
 };
