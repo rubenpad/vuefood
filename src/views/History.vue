@@ -67,7 +67,7 @@
 import Transaction from "@/components/Transaction.vue";
 import Suggestions from "@/components/Suggestions.vue";
 import formattersMixin from "@/mixins/formatters";
-import jsondata from "../../data.json";
+import api from "@/api";
 
 export default {
   mixins: [formattersMixin],
@@ -75,10 +75,22 @@ export default {
   data() {
     return {
       dialog: false,
-      buyer: jsondata.data.buyer,
-      history: jsondata.data.history,
-      suggestions: jsondata.data.suggestions
+      buyer: {},
+      history: [],
+      suggestions: []
     };
+  },
+  created() {
+    this.getBuyerHistory();
+  },
+  methods: {
+    async getBuyerHistory() {
+      const buyerId = this.$route.params.buyerId;
+      const response = await api.getBuyerHistory(buyerId);
+      this.buyer = response.data.buyer[0];
+      this.history = response.data.history;
+      this.suggestions = response.data.suggestions;
+    }
   }
 };
 </script>
