@@ -36,7 +36,6 @@ export default {
     async loadData(date) {
       const d = new Date(date);
       const unixTimestamp = Math.floor(d.getTime() / 1000);
-
       await api.loadData(unixTimestamp);
     }
   }
