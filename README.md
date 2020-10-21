@@ -30,25 +30,29 @@ This repository contains code for the web interface of GOODFOOD application. [In
 
 ### Home
 
-<img src="./docs/home.png" style="box-shadow: 1px 1px 14px -4px rgba(0,0,0,0.75);">
+<img src="./docs/home.png" style="box-shadow: 2px 2px 25px -5px rgba(0,0,0,0.75);">
 
 ### Load data section
 
-This section allows you to select a date from which you want to load the data. By default the application load data for the current day
-<img src="./docs/load-data.png" style="box-shadow: 1px 1px 14px -4px rgba(0,0,0,0.75);">
+This section allows you to select a date from which you want to load the data. By default the application load data for the current day.
+
+<img src="./docs/load-data.png" style="box-shadow: 2px 2px 25px -5px rgba(0,0,0,0.75);">
 
 When the process to load data have finish you can see the message according the case. "Data loaded" for successful response.
-<img src="./docs/data-loaded.png" style="box-shadow: 1px 1px 14px -4px rgba(0,0,0,0.75);">
+
+<img src="./docs/data-loaded.png" style="box-shadow: 2px 2px 25px -5px rgba(0,0,0,0.75);">
 
 ### Buyers List
 
 Here you can see the list of all buyers in the platform. If you click over a item the application show the page of buyer detail.
-<img src="./docs/buyers.png" style="box-shadow: 1px 1px 14px -4px rgba(0,0,0,0.75);">
+
+<img src="./docs/buyers.png" style="box-shadow: 2px 2px 25px -5px rgba(0,0,0,0.75);">
 
 ### Buyer detail
 
 This page show the detail of a buyer and his transactions history. Also you can see a list of IP's used by the buyer and a sub-list of people that make transactions from the same IP. In the right side of the page you can see a list of top 10 products recommended to the current client in based of people that buy similar products.
-<img src="./docs/buyer-detail.png" style="box-shadow: 1px 1px 14px -4px rgba(0,0,0,0.75);">
+
+<img src="./docs/buyer-detail.png" style="box-shadow: 2px 2px 25px -5px rgba(0,0,0,0.75);">
 
 ## Technologies:
 
