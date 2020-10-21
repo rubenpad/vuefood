@@ -47,7 +47,7 @@ Here you can see the list of all buyers in the platform. If you click over a ite
 
 ### Buyer detail
 
-This page show the detail of a buyer and his transactions history. Also you can see a list of IP's used by the buyer and a sub-list of people that make transactions from the same IP. In the right side of the page you can see a recommendations list of top 10 products bought for people that buy similar products to the current client
+This page show the detail of a buyer and his transactions history. Also you can see a list of IP's used by the buyer and a sub-list of people that make transactions from the same IP. In the right side of the page you can see a list of top 10 products recommended to the current client in based of people that buy similar products.
 <img src="./docs/buyer-detail.png">
 
 ## Technologies:
