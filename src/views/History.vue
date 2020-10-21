@@ -5,7 +5,6 @@
       <v-card class="grid-up" tile>
         <Buyer v-bind:buyer="buyer[0]" />
       </v-card>
-
       <v-card class="grid-down d-flex">
         <v-card min-width="50%" flat>
           <TransactionList v-bind:history="history" />

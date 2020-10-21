@@ -15,16 +15,9 @@
         class="ml-6"
       >
         <v-icon class="mr-4">mdi-account</v-icon>
-        <router-link
-          :to="{
-            name: 'History',
-            params: { buyerId: item.buyer.id }
-          }"
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="item.buyer.name"></v-list-item-title>
-          </v-list-item-content>
-        </router-link>
+        <v-list-item-content>
+          <v-list-item-title v-text="item.buyer.name"></v-list-item-title>
+        </v-list-item-content>
       </v-list-item>
     </v-list-group>
   </v-list>
