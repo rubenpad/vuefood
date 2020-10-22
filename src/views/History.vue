@@ -3,14 +3,14 @@
     <Spinner v-if="isLoading" />
     <div class="grid-products" v-if="!isLoading">
       <v-card class="grid-up" tile>
-        <Buyer v-bind:buyer="buyer[0]" />
+        <Buyer v-bind:buyer="buyer" />
       </v-card>
       <v-card class="grid-down d-flex">
         <v-card min-width="50%" flat>
           <TransactionList v-bind:history="history" />
         </v-card>
         <v-card min-width="50%" flat>
-          <IPList v-bind:iplist="iplist" />
+          <IPList v-bind:iplist="iplist" v-on:buyer-id="changeBuyerId" />
         </v-card>
       </v-card>
 
@@ -35,7 +35,7 @@ export default {
     return {
       dialog: false,
       isLoading: false,
-      buyer: [],
+      buyer: {},
       history: [],
       suggestions: [],
       iplist: []
@@ -45,15 +45,18 @@ export default {
     this.getBuyerHistory();
   },
   methods: {
-    async getBuyerHistory() {
+    async getBuyerHistory(buyerId = this.$route.params.buyerId) {
       this.isLoading = true;
-      const buyerId = this.$route.params.buyerId;
       const response = await api.getBuyerHistory(buyerId);
-      this.buyer = response.data.buyer;
+      this.buyer = response.data.buyer[0];
       this.history = response.data.history;
       this.suggestions = response.data.suggestions;
       this.iplist = response.data.iplist;
       this.isLoading = false;
+    },
+
+    changeBuyerId(buyerId) {
+      this.getBuyerHistory(buyerId);
     }
   }
 };

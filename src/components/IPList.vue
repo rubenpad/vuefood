@@ -15,8 +15,12 @@
         class="ml-6"
       >
         <v-icon class="mr-4">mdi-account</v-icon>
-        <v-list-item-content>
-          <v-list-item-title v-text="item.buyer.name"></v-list-item-title>
+        <v-list-item-content class="pointer">
+          <v-list-item-title
+            class="pointer"
+            v-text="item.buyer.name"
+            v-on:click="$emit('buyer-id', item.buyer.id)"
+          ></v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list-group>
@@ -31,3 +35,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.pointer {
+  cursor: pointer;
+}
+</style>

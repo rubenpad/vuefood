@@ -19,6 +19,8 @@
 
 <script>
 import LoadDataSheet from "@/components/LoadData.vue";
+import { format } from "date-fns";
+import getUnixTime from "date-fns/getUnixTime";
 import api from "@/api";
 
 export default {
@@ -26,9 +28,7 @@ export default {
   components: { LoadDataSheet },
   data() {
     return {
-      date: new Date(new Date().toLocaleDateString())
-        .toISOString()
-        .substr(0, 10)
+      date: format(new Date(), "yyyy-MM-dd")
     };
   },
   mounted() {
@@ -36,8 +36,7 @@ export default {
   },
   methods: {
     async loadData(date) {
-      const d = new Date(date);
-      const unixTimestamp = Math.floor(d.getTime() / 1000);
+      const unixTimestamp = getUnixTime(new Date(date + "GMT-5"));
       await api.loadData(unixTimestamp);
     }
   }

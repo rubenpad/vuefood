@@ -86,9 +86,7 @@ export default {
       menu: false,
       message: "",
       snackbar: false,
-      date: new Date(new Date().toLocaleDateString())
-        .toISOString()
-        .substr(0, 10)
+      date: format(new Date(), "yyyy-MM-dd")
     };
   },
   methods: {
@@ -102,7 +100,7 @@ export default {
         return;
       }
 
-      const unixTimestamp = getUnixTime(new Date(date));
+      const unixTimestamp = getUnixTime(new Date(date + "GMT-5"));
       const response = await api.loadData(unixTimestamp);
 
       this.loading = false;
