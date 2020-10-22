@@ -63,6 +63,8 @@ This page show the detail of a buyer and his transactions history. Also you can 
 
 ## Quick start:
 
+> Before starting be sure you follow the steps described to run [the back-end for this application](https://github.com/rubbenpad/gofood)
+
 1. Clone this repository:
 
     `git clone git@github.com:rubbenpad/vuefood.git`
@@ -77,7 +79,7 @@ This page show the detail of a buyer and his transactions history. Also you can 
 
     `npm run serve`
 
-4. Compiles and minifes for production
+4. Compiles for production
 
     `npm run build`
 
